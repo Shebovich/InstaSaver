@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/instIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/titleScreen"
+        android:layout_width="wrap_content"
+        android:text="Waiting for a link..."
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/instIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/instIcon">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/faqIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/instIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/instIcon">
+    </ImageView>
+
+
+    <com.skyfishjy.library.RippleBackground
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/helpDialogConstraint"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/rippleBackground"
+        app:rb_color="#33424141"
+
+        app:rb_radius="60dp"
+        app:rb_rippleAmount="3"
+        app:rb_duration="6000"
+        app:rb_scale="4">
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="22dp"
+            android:background="@drawable/background_repost"
+
+            android:layout_centerInParent="true"
+            android:id="@+id/centerImage"
+            android:src="@drawable/ic_repost_main"/>
+    </com.skyfishjy.library.RippleBackground>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_history"
+        android:layout_width="match_parent"
+        android:layout_height="96dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/photoImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:text="Maggie ortega"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toTopOf="@+id/photoImage"
+            app:layout_constraintStart_toEndOf="@+id/photoImage"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:text="ortega"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/photoImage"
+            app:layout_constraintStart_toEndOf="@+id/photoImage"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_enter"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </ImageView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="gone"
+        android:id="@+id/helpDialogConstraint"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/ic_group"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <ImageView
+            android:id="@+id/closeDialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_close"
+            android:layout_marginEnd="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/howToRepost"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="How to repost?"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-light"
+            android:lineSpacingExtra="8dp"
+            android:text="Open Instagram \nFind the photo or video you want to post \nClick on the button in the upper right \ncorner and select \u0022Copy link\u0022 \nReturner to Repost and wait for the \npublication to appear"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/howToRepost"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

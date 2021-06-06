@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.shebovich.instasaver.FragmentHome"
+        android:label="FragmentHome" >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentRepost"
+            app:destination="@id/fragmentRepost" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRepost"
+        android:name="com.shebovich.instasaver.FragmentRepost"
+        android:label="FragmentRepost" />
+</navigation>
