@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout app:layout_constraintStart_toStartOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:layout_constraintBottom_toTopOf="@+id/bubbleTabBar"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/ic_history"
+    android:layout_width="match_parent"
+    android:layout_height="96dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/photoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:text="Maggie ortega"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toTopOf="@+id/photoImage"
+        app:layout_constraintStart_toEndOf="@+id/photoImage"
+        android:layout_height="wrap_content">
+    </TextView>
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:text="ortega"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        android:textSize="18sp"
+        android:layout_marginStart="16dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/photoImage"
+        app:layout_constraintStart_toEndOf="@+id/photoImage"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_enter"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </ImageView>
+</androidx.constraintlayout.widget.ConstraintLayout>
