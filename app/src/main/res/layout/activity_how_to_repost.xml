@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@null"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="4dp"
+        android:background="@drawable/background_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="590dp">
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:textSize="22sp"
+            android:text="How to make repost"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:id="@+id/howText"
+            android:textColor="#000"
+            android:layout_marginTop="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <RelativeLayout
+            android:id="@+id/launchInstLayout"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:padding="8dp"
+            android:backgroundTint="#5ABAB5B5"
+            android:background="@drawable/login_button"
+            app:layout_constraintTop_toBottomOf="@+id/howText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <ImageView
+                android:src="@drawable/login_button"
+                app:tint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </ImageView>
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Launch Instagram"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/publicationSettingsLayout"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:padding="8dp"
+            android:backgroundTint="#5ABAB5B5"
+            android:background="@drawable/login_button"
+            app:layout_constraintTop_toBottomOf="@+id/launchInstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="91dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="@drawable/login_button"
+                android:backgroundTint="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp">
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+                <TextView
+                    android:layout_marginStart="8dp"
+                    android:text="kanyewest"
+                    android:textColor="#000"
+                    app:layout_constraintTop_toTopOf="@+id/profileImage"
+                    app:layout_constraintBottom_toBottomOf="@id/profileImage"
+                    app:layout_constraintStart_toEndOf="@+id/profileImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <ImageView
+                    android:padding="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="24dp"
+                    android:src="@drawable/ic_enter"
+                    android:layout_marginEnd="16dp"
+                    android:layout_height="24dp">
+
+                </ImageView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Tap to Publication Settings"
+                android:textColor="#000"
+                android:textSize="16sp"></TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/copyLinkLayout"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:padding="8dp"
+            android:backgroundTint="#5ABAB5B5"
+            android:background="@drawable/login_button"
+            app:layout_constraintTop_toBottomOf="@+id/publicationSettingsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="91dp">
+            <Button
+                android:background="@drawable/login_button"
+                android:backgroundTint="@color/white"
+                android:text="Copy link"
+                android:textAllCaps="false"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+
+            </Button>
+
+            <TextView
+                android:id="@+id/copyLinkText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Tap to Copy Link"
+                android:textColor="#000"
+                android:textSize="16sp"></TextView>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/backToReposterLayout"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:padding="8dp"
+            android:backgroundTint="#5ABAB5B5"
+            android:background="@drawable/login_button"
+            app:layout_constraintTop_toBottomOf="@+id/copyLinkLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <ImageView
+                android:src="@drawable/login_button"
+                app:tint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </ImageView>
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Back to reposter"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/openInstagramButton"
+            app:layout_constraintTop_toBottomOf="@+id/backToReposterLayout"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#515BD4"
+            android:text="Open Instagram"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/login_button"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_height="60dp">
+        </Button>
+
+        <Button
+            app:layout_constraintTop_toBottomOf="@+id/openInstagramButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:text="Close"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:id="@+id/closeButton"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/login_button"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:layout_height="60dp">
+        </Button>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
