@@ -18,4 +18,5 @@
     <string name="client_id">101064208879748</string>
     <string name="callback_url">https://instagram.com/</string>
     <string name="base_url">https://api.instagram.com/</string>
+    <string name="make_repost">Make Repost</string>
 </resources>
