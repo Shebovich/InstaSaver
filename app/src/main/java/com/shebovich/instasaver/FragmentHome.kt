@@ -25,7 +25,7 @@ class FragmentHome : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.rippleBackground.startRippleAnimation()
         binding.centerImage.startAnimation(AnimationUtils.loadAnimation(requireActivity(),R.anim.pulse))
-        binding.closeDialog.setOnClickListener{
+        binding.closeDialog.setOnClickListener {
             slideDown(binding.helpDialogConstraint)
         }
     }
