@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout app:layout_constraintStart_toStartOf="parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     app:layout_constraintBottom_toTopOf="@+id/bubbleTabBar"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginBottom="8dp"
-    android:background="@drawable/ic_history"
+
+
+
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="96dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
