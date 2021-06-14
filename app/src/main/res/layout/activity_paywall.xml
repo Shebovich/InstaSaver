@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/paywall_background"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+
+            <ImageView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_close"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </ImageView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/girlImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/subscribe_girl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"></ImageView>
+
+        <TextView
+            android:id="@+id/premiumText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/girlImage"
+            android:layout_width="wrap_content"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:text="Get Premium Access"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/premiumText"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:layout_marginTop="4dp"
+            android:text="Unlimited reposts, no ads, no watermarks and a convenient tag generator"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/premiumDescriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/weeklyLayout"
+            app:layout_constraintTop_toBottomOf="@id/premiumDescriptionText"
+            android:background="@drawable/login_button"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#33000000"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <TextView
+                android:id="@+id/weeklyText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="16dp"
+
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekly">
+            </TextView>
+
+            <TextView
+                android:id="@+id/weeklyCostText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weeklyText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$19.99 per week, Auto-renewal">
+            </TextView>
+
+            <RadioButton
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="16dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </RadioButton>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/monthlyLayout"
+            app:layout_constraintTop_toBottomOf="@id/weeklyLayout"
+            android:background="@drawable/login_button"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#33000000"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <RadioButton
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="16dp"
+                android:checked="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </RadioButton>
+
+            <TextView
+                android:id="@+id/monthlyText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="16dp"
+
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monthly">
+            </TextView>
+
+            <TextView
+                android:id="@+id/monthlyCostText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/monthlyText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$1.99 per week, Auto-renewal">
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/yearlyLayout"
+            app:layout_constraintTop_toBottomOf="@id/monthlyLayout"
+            android:background="@drawable/login_button"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#33000000"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <RadioButton
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="16dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </RadioButton>
+
+            <TextView
+                android:id="@+id/yearlyText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="16dp"
+
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yearly">
+            </TextView>
+
+            <TextView
+                android:id="@+id/yearlyCostText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/yearlyText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0.99 per week, Auto-renewal">
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/continueButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/login_button"
+            android:backgroundTint="#F58529"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
