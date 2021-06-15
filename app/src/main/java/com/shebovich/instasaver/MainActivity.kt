@@ -8,7 +8,11 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.shebovich.instasaver.databinding.ActivityMainBinding
 import com.shebovich.instasaver.instagramauth.AuthenticationDialog
 import com.shebovich.instasaver.instagramauth.AuthenticationListener
@@ -19,24 +23,19 @@ import java.security.NoSuchAlgorithmException
 class MainActivity : AppCompatActivity(), AuthenticationListener {
     lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
-    val fragmentsMap = mapOf(R.id.ic_repost to R.id.action_fragmentHome_to_fragmentRepost)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         printKeyHash()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        navController = navHostFragment.navController
-        initView()
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavView)
+        navController = findNavController(R.id.nav_host_fragment)
+        bottomNavigationView.setupWithNavController(navController)
         checkImageUrl()
+
     }
 
-    private fun initView() {
-        binding.bubbleTabBar.addBubbleListener {
-            fragmentsMap[it]?.let { it1 -> navController.navigate(it1) }
-        }
-    }
 
     override fun onResume() {
         super.onResume()

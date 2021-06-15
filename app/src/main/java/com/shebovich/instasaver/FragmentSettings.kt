@@ -14,6 +14,7 @@ class FragmentSettings : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         return binding.root
     }

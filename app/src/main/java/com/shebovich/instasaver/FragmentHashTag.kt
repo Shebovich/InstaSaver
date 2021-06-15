@@ -14,6 +14,7 @@ class FragmentHashTag : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         binding = ActivityHashtagBinding.inflate(inflater)
         return binding.root
     }

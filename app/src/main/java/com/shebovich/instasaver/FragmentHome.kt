@@ -16,7 +16,8 @@ class FragmentHome : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        setHasOptionsMenu(true)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         return binding.root
     }
