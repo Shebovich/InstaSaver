@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/ic_search"
-        android:icon="@drawable/ic_search"
-        android:orderInCategory = "100"
-        android:color="@color/logger"
-        />
-    <item
-        android:id="@+id/ic_repost"
-
+        android:id="@+id/repost_fragment"
+        android:title=""
         android:orderInCategory = "100"
         android:icon="@drawable/ic_repost"
         android:color="@color/logger"/>
     <item
-        android:id="@+id/ic_hashtag"
+        android:id="@+id/search_fragment"
+        android:title=""
+        android:icon="@drawable/ic_search"
+        android:orderInCategory = "100"
+        android:color="@color/logger"
+        />
 
+    <item
+        android:id="@+id/hashtag_fragment"
+        android:title=""
         android:orderInCategory = "100"
         android:icon="@drawable/ic_hashtag"
-
-        android:checked="true"
         android:color="@color/logger"/>
     <item
-        android:id="@+id/ic_settings"
+        android:title=""
+        android:id="@+id/settings_fragment"
         android:orderInCategory = "100"
         android:icon="@drawable/ic_settings"
         android:color="@color/logger"/>

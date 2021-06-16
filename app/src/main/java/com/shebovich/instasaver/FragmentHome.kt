@@ -8,16 +8,20 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.TranslateAnimation
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.shebovich.instasaver.databinding.ActivityHomeBinding
 
-class FragmentHome : Fragment() {
+class FragmentHome : Fragment(), IFragment {
     lateinit var binding: ActivityHomeBinding
+    lateinit var navController: NavController
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         setHasOptionsMenu(true)
+
         binding = ActivityHomeBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -68,6 +72,10 @@ class FragmentHome : Fragment() {
             }
         })
         view.startAnimation(animate)
+
+    }
+
+    override fun initNavigation() {
 
     }
 }

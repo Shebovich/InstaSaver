@@ -29,9 +29,8 @@ class MainActivity : AppCompatActivity(), AuthenticationListener {
         printKeyHash()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavView)
         navController = findNavController(R.id.nav_host_fragment)
-        bottomNavigationView.setupWithNavController(navController)
+        binding.bottomNavView.setupWithNavController(navController)
         checkImageUrl()
 
     }
