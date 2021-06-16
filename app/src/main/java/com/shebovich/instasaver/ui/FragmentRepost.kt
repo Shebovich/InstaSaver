@@ -1,4 +1,4 @@
-package com.shebovich.instasaver
+package com.shebovich.instasaver.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +14,7 @@ class FragmentRepost : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         binding = ActivityRepostBinding.inflate(layoutInflater)
         return binding.root
     }

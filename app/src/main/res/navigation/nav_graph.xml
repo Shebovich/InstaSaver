@@ -1,49 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/fragmentHome">
+    app:startDestination="@id/home_fragment">
 
     <fragment
-        android:id="@+id/fragmentHome"
-        android:name="com.shebovich.instasaver.FragmentHome"
-        android:label="FragmentHome" >
-        <action
-            android:id="@+id/action_fragmentHome_to_fragmentRepost"
-            app:destination="@id/fragmentRepost" />
-        <action
-            android:id="@+id/action_fragmentHome_to_fragmentHashTag"
-            app:destination="@id/fragmentHashTag" />
-        <action
-            android:id="@+id/action_fragmentHome_to_fragmentSettings"
-            app:destination="@id/fragmentSettings" />
-    </fragment>
+        android:id="@+id/home_fragment"
+        android:name="com.shebovich.instasaver.ui.FragmentHome"
+        tools:layout="@layout/activity_home"
+        android:label="FragmentHome" />
     <fragment
-        android:id="@+id/fragmentRepost"
-        android:name="com.shebovich.instasaver.FragmentRepost"
+        android:id="@+id/repost_fragment"
+        tools:layout="@layout/activity_repost"
+        android:name="com.shebovich.instasaver.ui.FragmentRepost"
         android:label="FragmentRepost" />
     <fragment
-        android:id="@+id/fragmentProfile"
-        android:name="com.shebovich.instasaver.FragmentProfile"
-        android:label="FragmentProfile" />
-    <fragment
-        android:id="@+id/fragmentPublication"
-        android:name="com.shebovich.instasaver.FragmentPublication"
-        android:label="FragmentPublication" />
-    <fragment
-        android:id="@+id/fragmentHashTagInfo"
-        android:name="com.shebovich.instasaver.FragmentHashTagInfo"
-        android:label="FragmentHashTagInfo" />
-    <fragment
-        android:id="@+id/fragmentHashTag"
-        android:name="com.shebovich.instasaver.FragmentHashTag"
-        android:label="FragmentHashTag" />
-    <fragment
-        android:id="@+id/fragmentDescription"
-        android:name="com.shebovich.instasaver.FragmentDescription"
-        android:label="FragmentDescription" />
-    <fragment
-        android:id="@+id/fragmentSettings"
-        android:name="com.shebovich.instasaver.FragmentSettings"
+        android:id="@+id/settings_fragment"
+        tools:layout="@layout/activity_settings"
+        android:name="com.shebovich.instasaver.ui.FragmentSettings"
         android:label="FragmentSettings" />
+    <fragment
+        android:id="@+id/search_fragment"
+        tools:layout="@layout/activity_search"
+        android:name="com.shebovich.instasaver.ui.FragmentSearch"
+        android:label="FragmentSearch" />
+    <fragment
+        android:id="@+id/hashtag_fragment"
+        android:name="com.shebovich.instasaver.ui.FragmentHashTag"
+        android:label="FragmentHashTag" />
 </navigation>

@@ -1,21 +1,21 @@
-package com.shebovich.instasaver
+package com.shebovich.instasaver.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.shebovich.instasaver.databinding.ActivityHashtagInfoBinding
+import com.shebovich.instasaver.databinding.ActivityHashtagBinding
 
-class FragmentHashTagInfo : Fragment() {
-    lateinit var binding : ActivityHashtagInfoBinding
+class FragmentHashTag : Fragment() {
+    lateinit var binding: ActivityHashtagBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = ActivityHashtagInfoBinding.inflate(layoutInflater)
+    ): View? {
+        setHasOptionsMenu(true)
+        binding = ActivityHashtagBinding.inflate(inflater)
         return binding.root
     }
-
 }

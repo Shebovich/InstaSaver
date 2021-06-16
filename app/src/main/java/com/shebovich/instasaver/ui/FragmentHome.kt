@@ -1,4 +1,4 @@
-package com.shebovich.instasaver
+package com.shebovich.instasaver.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,15 +8,20 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.TranslateAnimation
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import com.shebovich.instasaver.R
 import com.shebovich.instasaver.databinding.ActivityHomeBinding
 
-class FragmentHome : Fragment() {
+class FragmentHome : Fragment(), IFragment {
     lateinit var binding: ActivityHomeBinding
+    lateinit var navController: NavController
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        setHasOptionsMenu(true)
+
         binding = ActivityHomeBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -24,7 +29,9 @@ class FragmentHome : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rippleBackground.startRippleAnimation()
-        binding.centerImage.startAnimation(AnimationUtils.loadAnimation(requireActivity(),R.anim.pulse))
+        binding.centerImage.startAnimation(AnimationUtils.loadAnimation(requireActivity(),
+            R.anim.pulse
+        ))
         binding.closeDialog.setOnClickListener {
             slideDown(binding.helpDialogConstraint)
         }
@@ -67,6 +74,10 @@ class FragmentHome : Fragment() {
             }
         })
         view.startAnimation(animate)
+
+    }
+
+    override fun initNavigation() {
 
     }
 }

@@ -1,9 +1,9 @@
-package com.shebovich.instasaver
+package com.shebovich.instasaver.ui.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.shebovich.instasaver.models.Profile
 import com.shebovich.instasaver.databinding.RepostRawBinding
 
 class RepostAdapter(private val profileList: List<Profile>) : RecyclerView.Adapter<RepostAdapter.ViewHolder>() {
