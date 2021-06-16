@@ -1,21 +1,20 @@
-package com.shebovich.instasaver
+package com.shebovich.instasaver.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.shebovich.instasaver.databinding.ActivitySearchBinding
+import com.shebovich.instasaver.databinding.ActivityPublicationBinding
 
-class FragmentSearch : Fragment() {
-    lateinit var binding: ActivitySearchBinding
+class FragmentPublication : Fragment() {
+    lateinit var binding: ActivityPublicationBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        setHasOptionsMenu(true)
-        binding = ActivitySearchBinding.inflate(layoutInflater)
+        binding = ActivityPublicationBinding.inflate(layoutInflater)
         return binding.root
     }
 

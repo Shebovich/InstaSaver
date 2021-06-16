@@ -1,4 +1,4 @@
-package com.shebovich.instasaver
+package com.shebovich.instasaver.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import android.view.animation.AnimationUtils
 import android.view.animation.TranslateAnimation
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.fragment.findNavController
+import com.shebovich.instasaver.R
 import com.shebovich.instasaver.databinding.ActivityHomeBinding
 
 class FragmentHome : Fragment(), IFragment {
@@ -29,7 +29,9 @@ class FragmentHome : Fragment(), IFragment {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rippleBackground.startRippleAnimation()
-        binding.centerImage.startAnimation(AnimationUtils.loadAnimation(requireActivity(),R.anim.pulse))
+        binding.centerImage.startAnimation(AnimationUtils.loadAnimation(requireActivity(),
+            R.anim.pulse
+        ))
         binding.closeDialog.setOnClickListener {
             slideDown(binding.helpDialogConstraint)
         }

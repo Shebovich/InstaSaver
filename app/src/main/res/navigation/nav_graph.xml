@@ -7,26 +7,26 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.shebovich.instasaver.FragmentHome"
+        android:name="com.shebovich.instasaver.ui.FragmentHome"
         tools:layout="@layout/activity_home"
         android:label="FragmentHome" />
     <fragment
         android:id="@+id/repost_fragment"
         tools:layout="@layout/activity_repost"
-        android:name="com.shebovich.instasaver.FragmentRepost"
+        android:name="com.shebovich.instasaver.ui.FragmentRepost"
         android:label="FragmentRepost" />
     <fragment
         android:id="@+id/settings_fragment"
         tools:layout="@layout/activity_settings"
-        android:name="com.shebovich.instasaver.FragmentSettings"
+        android:name="com.shebovich.instasaver.ui.FragmentSettings"
         android:label="FragmentSettings" />
     <fragment
         android:id="@+id/search_fragment"
         tools:layout="@layout/activity_search"
-        android:name="com.shebovich.instasaver.FragmentSearch"
+        android:name="com.shebovich.instasaver.ui.FragmentSearch"
         android:label="FragmentSearch" />
     <fragment
         android:id="@+id/hashtag_fragment"
-        android:name="com.shebovich.instasaver.FragmentHashTag"
+        android:name="com.shebovich.instasaver.ui.FragmentHashTag"
         android:label="FragmentHashTag" />
 </navigation>

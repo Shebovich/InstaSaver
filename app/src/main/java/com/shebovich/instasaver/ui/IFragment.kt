@@ -1,4 +1,4 @@
-package com.shebovich.instasaver
+package com.shebovich.instasaver.ui
 
 interface IFragment {
     fun initNavigation()
