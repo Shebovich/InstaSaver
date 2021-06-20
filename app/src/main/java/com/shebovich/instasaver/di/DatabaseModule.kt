@@ -25,7 +25,7 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun providePokeDao(instagramDB: InstagramDB): ProfileDao {
+    fun provideProfileDao(instagramDB: InstagramDB): ProfileDao {
         return instagramDB.profileDao()
     }
 }

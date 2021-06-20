@@ -13,10 +13,11 @@ import com.shebovich.instasaver.R
 import com.shebovich.instasaver.databinding.ActivityMainBinding
 import com.shebovich.instasaver.instagramauth.AuthenticationDialog
 import com.shebovich.instasaver.instagramauth.AuthenticationListener
+import dagger.hilt.android.AndroidEntryPoint
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), AuthenticationListener {
     lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
