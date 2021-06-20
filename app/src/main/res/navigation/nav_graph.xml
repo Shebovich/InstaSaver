@@ -9,7 +9,11 @@
         android:id="@+id/home_fragment"
         android:name="com.shebovich.instasaver.ui.FragmentHome"
         tools:layout="@layout/activity_home"
-        android:label="FragmentHome" />
+        android:label="FragmentHome" >
+        <action
+            android:id="@+id/action_home_fragment_to_fragmentInstagramLogin"
+            app:destination="@id/fragmentInstagramLogin" />
+    </fragment>
     <fragment
         android:id="@+id/repost_fragment"
         tools:layout="@layout/activity_repost"
@@ -29,4 +33,13 @@
         android:id="@+id/hashtag_fragment"
         android:name="com.shebovich.instasaver.ui.FragmentHashTag"
         android:label="FragmentHashTag" />
+    <fragment
+        android:id="@+id/fragmentInstagramLogin"
+        android:name="com.shebovich.instasaver.ui.FragmentInstagramLogin"
+        android:label="FragmentInstagramLogin" >
+        <action
+            android:id="@+id/action_fragmentInstagramLogin_to_home_fragment"
+            app:destination="@id/home_fragment" />
+    </fragment>
+
 </navigation>

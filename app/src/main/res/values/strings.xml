@@ -15,8 +15,9 @@
     <string name="downloads">Downloads</string>
     <string name="facebook_app_id">add late</string>
     <string name="facebook_login_protocol_scheme">add late</string>
-    <string name="client_id">101064208879748</string>
-    <string name="callback_url">https://instagram.com/</string>
+    <string name="client_id">1011068025964073</string>
+    <string name="callback_url">https://github.com/Shebovich/InstaSaver</string>
     <string name="base_url">https://api.instagram.com/</string>
     <string name="make_repost">Make Repost</string>
+    <string name="auth_url">api.instagram.com/oauth/authorize?client_id=1011068025964073&amp;redirect_uri=https://github.com/Shebovich/InstaSaver&amp;scope=user_profile,user_media&amp;response_type=code</string>
 </resources>

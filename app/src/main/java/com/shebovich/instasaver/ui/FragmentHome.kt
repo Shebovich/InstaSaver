@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils
 import android.view.animation.TranslateAnimation
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.shebovich.instasaver.R
 import com.shebovich.instasaver.databinding.ActivityHomeBinding
 
@@ -28,12 +29,16 @@ class FragmentHome : Fragment(), IFragment {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.rippleBackground.startRippleAnimation()
         binding.centerImage.startAnimation(AnimationUtils.loadAnimation(requireActivity(),
             R.anim.pulse
         ))
         binding.closeDialog.setOnClickListener {
             slideDown(binding.helpDialogConstraint)
+        }
+        binding.instIcon.setOnClickListener{
+            findNavController().navigate(R.id.action_home_fragment_to_fragmentInstagramLogin)
         }
     }
 

@@ -6,4 +6,5 @@ import javax.inject.Inject
 
 class ProfileRepository @Inject constructor(profileDao: ProfileDao,
                                             instagramApiService: InstagramApiService) {
+
 }
