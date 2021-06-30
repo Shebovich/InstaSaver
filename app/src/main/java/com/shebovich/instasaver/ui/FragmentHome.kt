@@ -12,9 +12,23 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.shebovich.instasaver.R
 import com.shebovich.instasaver.databinding.ActivityHomeBinding
+import com.google.android.material.snackbar.Snackbar
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context.CLIPBOARD_SERVICE
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.viewModels
+import com.shebovich.instasaver.ui.viewModels.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 class FragmentHome : Fragment(), IFragment {
     lateinit var binding: ActivityHomeBinding
+    private val viewModel: HomeViewModel by viewModels()
     lateinit var navController: NavController
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,6 +54,7 @@ class FragmentHome : Fragment(), IFragment {
         binding.instIcon.setOnClickListener{
             findNavController().navigate(R.id.action_home_fragment_to_fragmentInstagramLogin)
         }
+        checkImageUrl()
     }
 
     fun slideUp(view: View) {
@@ -80,6 +95,22 @@ class FragmentHome : Fragment(), IFragment {
         })
         view.startAnimation(animate)
 
+    }
+    private fun checkImageUrl() {
+        val clipBoard = requireActivity().getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+        val textToPaste = clipBoard.primaryClip?.getItemAt(0)?.text
+        println("textToPaste $textToPaste")
+        clipBoard.addPrimaryClipChangedListener {
+            val clipData = clipBoard.primaryClip
+            val item = clipData?.getItemAt(0)
+            val clipUrl = item?.text.toString()
+
+            if (clipUrl.startsWith("https://www.instagram.com")) {
+                println("RESULT clipUrl")
+                viewModel.parseMediaInstagram(clipUrl)
+
+            }
+        }
     }
 
     override fun initNavigation() {
