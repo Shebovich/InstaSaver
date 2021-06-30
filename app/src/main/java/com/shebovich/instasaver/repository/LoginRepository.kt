@@ -1,6 +1,6 @@
 package com.shebovich.instasaver.repository
 
-import com.shebovich.instasaver.api.InstagramApiService
+import com.shebovich.instasaver.network.InstagramApiService
 import com.shebovich.instasaver.db.SessionManager
 import com.shebovich.instasaver.models.UserSession
 import com.shebovich.instasaver.other.Constants

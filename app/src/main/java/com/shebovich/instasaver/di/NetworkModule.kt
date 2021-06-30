@@ -1,6 +1,6 @@
 package com.shebovich.instasaver.di
 
-import com.shebovich.instasaver.api.InstagramApiService
+import com.shebovich.instasaver.network.InstagramApiService
 import com.shebovich.instasaver.other.Constants
 import dagger.Module
 import dagger.Provides

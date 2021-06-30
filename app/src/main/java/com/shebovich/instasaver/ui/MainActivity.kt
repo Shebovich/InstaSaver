@@ -5,14 +5,17 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.shebovich.instasaver.R
 import com.shebovich.instasaver.databinding.ActivityMainBinding
 import com.shebovich.instasaver.instagramauth.AuthenticationDialog
 import com.shebovich.instasaver.instagramauth.AuthenticationListener
+import com.shebovich.instasaver.ui.viewModels.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
@@ -21,22 +24,40 @@ import java.security.NoSuchAlgorithmException
 class MainActivity : AppCompatActivity(), AuthenticationListener {
     lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
-
+    val viewModel: HomeViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         printKeyHash()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        navController = findNavController(R.id.nav_host_fragment)
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
         binding.bottomNavView.setupWithNavController(navController)
-        checkImageUrl()
 
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        val clipBoard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+        val clipUrl = clipBoard.primaryClip?.getItemAt(0)?.text.toString()
+        if (clipUrl.startsWith("https://www.instagram.com")) {
+            println("RESULT clipUrl")
+            viewModel.parseMediaInstagram(clipUrl)
+
+        }
+        clipBoard.addPrimaryClipChangedListener {
+            val clipData = clipBoard.primaryClip
+            val item = clipData?.getItemAt(0)
+            val clipUrl = item?.text.toString()
+            println("clipUrl $clipUrl")
+
+        }
     }
 
 
     override fun onResume() {
         super.onResume()
-
+        checkImageUrl()
     }
 
     private fun openInstagram() {
@@ -45,17 +66,13 @@ class MainActivity : AppCompatActivity(), AuthenticationListener {
         authenticationDialog.show()
     }
 
+
     private fun checkImageUrl() {
-        val clipBoard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-        clipBoard.addPrimaryClipChangedListener {
-            val clipData = clipBoard.primaryClip
-            val item = clipData!!.getItemAt(0)
-            val text = item.text.toString()
 
-        }
+        //val textToPaste = clipBoard.primaryClip?.getItemAt(0)?.text
 
-        // Access your context here using YourActivityName.this
-        }
+    }
+
 
 
 
